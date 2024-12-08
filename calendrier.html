@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier de l'Avent</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎁 Calendrier de l'Avent 🎄</h1>
+        <p>Ouvrez une boîte chaque jour !</p>
+    </header>
+    <main class="calendar">
+        <!-- Génération des 24 cases -->
+        <script>
+            document.write(
+                Array.from({ length: 24 }, (_, i) =>
+                    `<div class="day" onclick="showContent(${i + 1})">${i + 1}</div>`
+                ).join("")
+            );
+        </script>
+    </main>
+
+    <div id="gift-box" class="hidden">
+        <div class="lid"></div>
+        <div class="box">
+            <p id="content-text"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

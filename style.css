@@ -1,0 +1,109 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #d9534f;
+    color: #fff;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.day {
+    background-color: #5bc0de;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.day:hover {
+    background-color: #31b0d5;
+    transform: scale(1.1);
+}
+
+/* Boîte cadeau */
+#gift-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 200px;
+    height: 200px;
+    z-index: 10;
+    transition: transform 0.5s ease;
+}
+
+#gift-box.show {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#gift-box .lid {
+    background-color: #d9534f;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px 10px 0 0;
+    animation: lidOpen 0.5s forwards;
+    transform-origin: center bottom;
+}
+
+#gift-box .box {
+    background-color: #5bc0de;
+    width: 100%;
+    height: 160px;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+#content-text {
+    color: white;
+    font-size: 1rem;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Animation pour le couvercle */
+@keyframes lidOpen {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
